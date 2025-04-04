@@ -23,7 +23,6 @@ In addition to the plugin, we have developed a project that showcases how ETH ca
 1. Integration of blockchain functionality into low-code environments like Oracle APEX.
 2. Real-world use cases for deploying smart contracts and interacting with them via web interfaces.
 
----
 
 ## Documentation Links
 
@@ -31,7 +30,6 @@ For further reference on Oracle APEX APIs:
 - [Oracle APEX JavaScript API Reference (Release 22.1)](https://docs.oracle.com/en/database/oracle/apex/22.1/aexjs/toc.html)
 - [PL/SQL API Documentation (Release 22.1)](https://docs.oracle.com/en/database/oracle/apex/22.1/aeapi/toc.htm)
 
----
 
 ## Tools Used
 
@@ -48,11 +46,3 @@ To develop and deploy this plugin locally or on testnets/mainnets, we used:
 
 4. **MetaMask Wallet**  
    Enables wallet management and interaction with deployed contracts on Ethereum networks.
-
----
-
-## Contact Information
-
-For more information about this plugin or other Oracle APEX-related services:
-- Visit [Novoshore](https://www.novoshore.com)
-- Email us at hello@novoshore.com
