@@ -1,7 +1,12 @@
 
+# Apex-Plug-ins
 This smart contract implements the ERC20 standard with additional functionalities such as token purchases using ETH, administrative controls for minting and burning tokens, and ownership management.
 
----
+# Novoshore
+<p align="center">
+  <a href="https://www.novoshore.com/" target="blank"><img src="https://www.novoshore.com/wp-content/uploads/2018/08/n-ugly-3-e1534939287262.png" width="315" alt="Novoshore Logo" /></a>
+</p>
+<p align="center">Oracle Apex files for Apex projects.</p>
 
 ## Folder Structure
 
