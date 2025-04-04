@@ -10,18 +10,11 @@ This smart contract implements the ERC20 standard with additional functionalitie
 
 ## Folder Structure
 
-### `dist` Folder
-The distribution folder contains the packaged version of the Oracle APEX plugin. This includes:
-- The deployable Oracle APEX plugin file for easy import into an APEX environment.
-- Documentation for plugin usage.
+### `Novocoin.contract` Folder
 
-### `src` Folder
-The source folder is organized into three subdirectories:
-1. **Images Folder**: Contains visual elements such as icons and UI graphics used in the plugin.
-2. **jQuery Folder**: Includes JavaScript files leveraging jQuery to provide dynamic and interactive features.
-3. **SQL Folder**: Contains SQL scripts for database interactions required by the plugin (e.g., token tracking).
 
----
+### `Novocoin.send.eth` Folder
+
 
 ## Ethereum Token Assignment Project
 
