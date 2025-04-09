@@ -1,0 +1,13 @@
+.novocoin-status-message {
+  display: flex; /* Para alinear el ícono y el texto en una línea */
+  align-items: center; /* Centra verticalmente el ícono con el texto */
+  font-family: Arial, sans-serif; /* Fuente del texto */
+  font-size: 16px; /* Tamaño del texto */
+  color: #333; /* Color del texto */
+}
+
+.novocoin-status-message i {
+  margin-right: 8px; /* Espaciado entre el ícono y el texto */
+  font-size: 14px; /* Tamaño del ícono */
+  color: #ffa500; /* Color del ícono (naranja para "conectando") */
+}
