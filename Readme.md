@@ -19,33 +19,106 @@ A custom Oracle APEX plugin that connects to the blockchain via Web3 and MetaMas
 ### `Novocoin.send.eth` Folder
 A frontend utility that facilitates sending ETH to the smart contract, enabling token purchases directly from the browser. It acts as a lightweight gateway between the user’s wallet and the Novocoin contract.
 
-## Ethereum Token Assignment Project
+## 📚 Documentation
 
-### Overview
-In addition to the plugin, we have developed a project that showcases how ETH can be assigned to an Ethereum smart contract directly from an Oracle APEX application. This project demonstrates:
-1. Integration of blockchain functionality into low-code environments like Oracle APEX.
-2. Real-world use cases for deploying smart contracts and interacting with them via web interfaces.
+This project relies on multiple technologies from blockchain development to Oracle APEX. The following resources provide reference and guidance for working with each layer:
 
+### 🔗 Oracle APEX
+- [Oracle APEX JavaScript API Reference (Release 24.2)](https://docs.oracle.com/en/database/oracle/apex/24.2/aexjs/index.html) – Client-side interactions with APEX components.
+- [PL/SQL API Documentation (Release 24.2)](https://docs.oracle.com/en/database/oracle/apex/24.2/aeapi/toc.htm) – Backend server-side logic for plugin and region handling.
+- [APEX Plugin Development Guide](https://docs.oracle.com/en/database/oracle/apex/24.2/aeapi/developing-plugins.html) – Plugin interface design and integration guide.
+- [Universal Theme Guide](https://apex.oracle.com/ut/) – Standardized UI practices for APEX apps.
 
-## Documentation Links
+### 🔗 Smart Contract Development & Web3
+- [Solidity Docs](https://docs.soliditylang.org/) – Main programming language for the smart contract layer.
+- [Web3.js](https://web3js.readthedocs.io/) – Blockchain interaction library used in the APEX plugin.
+- [Ethers.js](https://docs.ethers.org/v6/) – Alternative lightweight library for Web3 interaction.
+- [OpenZeppelin Contracts](https://docs.openzeppelin.com/contracts/) – Secure ERC-20 base contract implementation.
 
-For further reference on Oracle APEX APIs:
-- [Oracle APEX JavaScript API Reference (Release 22.1)](https://docs.oracle.com/en/database/oracle/apex/22.1/aexjs/toc.html)
-- [PL/SQL API Documentation (Release 22.1)](https://docs.oracle.com/en/database/oracle/apex/22.1/aeapi/toc.htm)
+### 🔗 Development Tools
+- [Truffle](https://trufflesuite.com/docs/truffle/overview/) – Compilation, deployment, and migration framework.
+- [Hardhat](https://hardhat.org/docs) – Flexible smart contract development environment.
+- [Remix IDE](https://remix.ethereum.org/) – Web-based IDE for Solidity testing.
+- [Ganache](https://trufflesuite.com/ganache/) – Local test blockchain for development and testing.
 
+### 🔗 Deployment & Infra
+- [MetaMask](https://docs.metamask.io/) – Wallet integration for signing transactions and reading balances.
+- [Infura](https://docs.infura.io/) – Ethereum node API provider for remote deployment.
+- [Alchemy](https://docs.alchemy.com/) – Reliable alternative to Infura for production.
+- [Chainlist](https://chainlist.org/) – Public RPC endpoints for various EVM-compatible networks.
 
-## Tools Used
+---
 
-To develop and deploy this plugin locally or on testnets/mainnets, we used:
+## 🛠 Tools Used
 
-1. **Node.js (v14 or later)**  
-   Essential for running development tools like Truffle and Ganache.
+- **Node.js** – JavaScript runtime for build tools and Web3 libraries.
+- **Truffle** – Primary framework for compiling and deploying smart contracts.
+- **Ganache** – Simulated Ethereum blockchain for local testing.
+- **MetaMask** – User wallet extension for blockchain interaction.
+- **Oracle APEX** – UI platform used to deliver the Web3 plugin experience.
+- **Web3.js** – Enables the APEX plugin to communicate with the blockchain.
 
-2. **Truffle Framework**  
-   Provides a suite of tools for compiling contracts, deploying them on blockchains, and testing their functionality.
+---
 
-3. **Ganache**  
-   Used as a local blockchain environment for testing smart contracts during development.
+## ⚙️ Prerequisites
 
-4. **MetaMask Wallet**  
-   Enables wallet management and interaction with deployed contracts on Ethereum networks.
+Make sure you have the following tools installed:
+
+| Tool            | Description                                                        |
+|-----------------|--------------------------------------------------------------------|
+| Node.js         | Required to run CLI and JavaScript build tools.                    |
+| Truffle         | For compiling, deploying, and testing contracts.                   |
+| Ganache         | For simulating a local Ethereum network.                           |
+| MetaMask        | For connecting and signing blockchain transactions.                |
+| Oracle APEX     | Required to deploy and use the plugin.                             |
+
+Optional tools:
+- **Hardhat** – Flexible smart contract development framework.
+- **Remix** – Ideal for quick Solidity code tests.
+- **Infura/Alchemy** – RPC providers for public blockchain deployment.
+
+---
+
+## 🚀 Installation Instructions
+
+Follow these steps to install and configure Novocoin locally:
+
+1. **Install Node.js**  
+   [Download Node.js](https://nodejs.org/) (version 14 or later).
+
+2. **Install Truffle**
+   ```bash
+   npm install -g truffle
+   ```
+
+3. **(Optional) Install Ganache**
+   ```bash
+   npm install -g ganache
+   ```
+
+4. **Install MetaMask**
+   Install the extension from [metamask.io](https://metamask.io/), and create/import a wallet.
+
+5. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-org/novocoin.git
+   cd novocoin
+   ```
+
+6. **Install Dependencies**  
+   Run this inside both `Novocoin.contract` and `Novocoin.send.eth`:
+   ```bash
+   npm install
+   ```
+
+7. **Compile and Deploy Contracts**
+   In `Novocoin.contract`:
+   ```bash
+   truffle compile
+   truffle migrate --network development
+   ```
+
+8. **Deploy APEX Plugin**
+   - Import the plugin into Oracle APEX.
+   - Set the smart contract address and user wallet address as plugin attributes.
+   - Make sure MetaMask is enabled when viewing the APEX page.
