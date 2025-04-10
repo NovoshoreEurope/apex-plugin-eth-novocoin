@@ -26,7 +26,7 @@ This project relies on multiple technologies from blockchain development to Orac
 ### 🔗 Oracle APEX
 - [Oracle APEX JavaScript API Reference (Release 24.2)](https://docs.oracle.com/en/database/oracle/apex/24.2/aexjs/index.html) – Client-side interactions with APEX components.
 - [PL/SQL API Documentation (Release 24.2)](https://docs.oracle.com/en/database/oracle/apex/24.2/aeapi/toc.htm) – Backend server-side logic for plugin and region handling.
-- [APEX Plugin Development Guide](https://docs.oracle.com/en/database/oracle/apex/24.2/aeapi/developing-plugins.html) – Plugin interface design and integration guide.
+- [APEX Plugin Development Guide](https://docs.oracle.com/en/database/oracle/apex/22.1/htmdb/implementing-plug-ins.html) – Plugin interface design and integration guide.
 - [Universal Theme Guide](https://apex.oracle.com/ut/) – Standardized UI practices for APEX apps.
 
 ### 🔗 Smart Contract Development & Web3
@@ -36,7 +36,7 @@ This project relies on multiple technologies from blockchain development to Orac
 - [OpenZeppelin Contracts](https://docs.openzeppelin.com/contracts/) – Secure ERC-20 base contract implementation.
 
 ### 🔗 Development Tools
-- [Truffle](https://trufflesuite.com/docs/truffle/overview/) – Compilation, deployment, and migration framework.
+- [Truffle](https://archive.trufflesuite.com/docs/truffle/) – Compilation, deployment, and migration framework.
 - [Hardhat](https://hardhat.org/docs) – Flexible smart contract development environment.
 - [Remix IDE](https://remix.ethereum.org/) – Web-based IDE for Solidity testing.
 - [Ganache](https://trufflesuite.com/ganache/) – Local test blockchain for development and testing.
