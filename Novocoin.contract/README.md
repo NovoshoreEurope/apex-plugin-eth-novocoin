@@ -1,146 +1,158 @@
-# Novocoin Smart Contract - README
 
-## Overview
-The **Novocoin** smart contract is an implementation of the ERC20 token standard with additional features such as minting, burning, token purchases with ETH, and administrative controls. Below is a detailed explanation of its functionality, features, and usage.
+# 🌟 Novocoin Smart Contract – User Guide & Feature Overview
+
+## 📜 Introduction
+
+**Novocoin** is a smart contract based on the **ERC20** standard, enhanced with advanced capabilities such as minting, burning, token purchases using ETH, and robust administrative controls. This guide provides a comprehensive overview of how the contract works, its features, and how to interact with it.
 
 ---
 
-## Token Details
+## 🪙 Token Specifications
+
 - **Name**: Novocoin  
 - **Symbol**: NOV  
-- **Decimals**: 2 (Token values are represented with two decimal places)  
+- **Decimals**: 2 (Token values are expressed with two decimal places)  
 - **Initial Supply**: 1,000,000 tokens  
 - **Maximum Supply**: 2,000,000 tokens  
-- **Token Price**: 1000 wei per token (1 ETH = 1000 tokens)  
+- **Token Price**: 1000 wei (1 ETH = 1000 tokens)  
 
 ---
 
-## Key Features
+## ⚙️ Core Features
 
-### ERC20 Standard Functions
-The contract implements the following standard ERC20 functions:
-1. **`totalSupply()`**: Returns the total supply of tokens in circulation.
-2. **`balanceOf(address)`**: Returns the balance of a specific address.
-3. **`transfer(address, uint)`**: Transfers tokens from the caller to another address.
-4. **`approve(address, uint)`**: Approves another address to spend a specified amount of tokens on behalf of the caller.
-5. **`allowance(address, address)`**: Checks the remaining allowance for a spender on behalf of a token owner.
-6. **`transferFrom(address, address, uint)`**: Transfers tokens on behalf of another address.
+### ✅ Standard ERC20 Functions
 
-### Administrative Controls
-- **Owner Role**:
-  - The contract deployer is assigned as the owner.
-  - The owner can transfer ownership to another address using `transferOwnership(address)`.
-  - The owner can assign or revoke administrator roles using `setAdministrator(address, bool)`.
-- **Administrator Role**:
-  - Administrators can mint new tokens up to the maximum supply using `mint(uint)`.
-  - Administrators can update the token price using `updateTokenPrice(uint)`.
-  - Administrators can pause or resume token purchases using `pausePurchases(bool)`.
+The contract implements all essential ERC20 functions:
 
-### Token Purchases
-- Users can buy tokens by sending ETH to the contract.
-- The function `buyTokens()` calculates the number of tokens based on ETH sent and the token price.
-- Excess ETH sent (if any) is refunded to the user.
+- `totalSupply()`: Returns the total circulating supply.  
+- `balanceOf(address)`: Returns the token balance of a specific address.  
+- `transfer(address, uint)`: Transfers tokens from the caller to another address.  
+- `approve(address, uint)`: Approves another address to spend tokens on the caller’s behalf.  
+- `allowance(address, address)`: Returns the remaining allowance a spender has.  
+- `transferFrom(address, address, uint)`: Transfers tokens on behalf of another address.
 
-### Minting and Burning
-- **Minting**:
-  - Administrators can mint new tokens up to a cap of 2,000,000 tokens.
-- **Burning**:
-  - Any user can burn their own tokens using `burn(uint)`.
+### 👑 Administrative Controls
 
-### Withdrawals
-The owner can withdraw ETH from the contract balance using `withdrawEther(uint)`.
+- **Owner**:
+  - The contract deployer becomes the initial owner.
+  - Ownership can be transferred using `transferOwnership(address)`.
+  - The owner can assign or revoke admin rights with `setAdministrator(address, bool)`.
 
-### Pause Functionality
-Token purchases can be paused or resumed by administrators using `pausePurchases(bool)`.
+- **Administrators**:
+  - Can mint new tokens up to the defined maximum supply via `mint(uint)`.
+  - Can update the token price with `updateTokenPrice(uint)`.
+  - Can pause or resume token purchases using `pausePurchases(bool)`.
 
----
+### 💰 Token Purchases
 
-## Events
-The contract emits events for various actions:
-1. **`Transfer(address indexed from, address indexed to, uint tokens)`**: Emitted during token transfers.
-2. **`Approval(address indexed owner, address indexed spender, uint tokens)`**: Emitted when an approval is granted.
-3. **`TokensPurchased(address indexed buyer, uint tokens, uint ethSpent)`**: Emitted when tokens are purchased with ETH.
-4. **`TokenPriceUpdated(uint oldPrice, uint newPrice)`**: Emitted when the token price is updated.
-5. **`OwnershipTransferred(address indexed oldOwner, address indexed newOwner)`**: Emitted when ownership is transferred.
+- Users can acquire tokens by sending ETH to the contract.  
+- The `buyTokens()` function calculates the number of tokens based on the current token price and returns any excess ETH.
+
+### 🔥 Minting & Burning
+
+- **Minting**:  
+  Only administrators can mint new tokens, respecting the maximum supply limit of 2,000,000.
+
+- **Burning**:  
+  Any user can burn their own tokens with `burn(uint)`.
+
+### 💸 Withdrawals
+
+The owner can withdraw ETH from the contract using `withdrawEther(uint)`.
+
+### ⏸️ Purchase Pausing
+
+Token purchases can be temporarily paused and resumed by administrators.
 
 ---
 
-## Modifiers
-The following modifiers are used to enforce access control and conditions:
-1. **`onlyOwner`**: Restricts certain functions to the contract owner.
-2. **`onlyAdmin`**: Restricts certain functions to administrators.
-3. **`whenNotPaused`**: Ensures that certain functions can only be executed when purchases are not paused.
+## 📢 Events
+
+The contract emits events to track important operations:
+
+- `Transfer(from, to, tokens)`: Emitted on token transfers.  
+- `Approval(owner, spender, tokens)`: Emitted on allowance approvals.  
+- `TokensPurchased(buyer, tokens, ethSpent)`: Emitted when tokens are bought with ETH.  
+- `TokenPriceUpdated(oldPrice, newPrice)`: Emitted when the token price is updated.  
+- `OwnershipTransferred(oldOwner, newOwner)`: Emitted on ownership transfer.
 
 ---
 
-## Functions Overview
+## 🛡️ Modifiers for Access Control
 
-### Public Functions
-1. **ERC20 Functions**
-   - `totalSupply()`: Returns total circulating supply.
-   - `balanceOf(address)`: Returns balance of an address.
-   - `transfer(address, uint)`: Transfers tokens from caller to another address.
-   - `approve(address, uint)`: Approves another address for spending on behalf of caller.
-   - `allowance(address, address)`: Checks allowance for a spender.
-   - `transferFrom(address, address, uint)`: Transfers tokens on behalf of another user.
-
-2. **Token Purchase**
-   - `buyTokens()`: Allows users to purchase tokens by sending ETH.
-
-3. **Minting and Burning**
-   - `mint(uint)`: Allows administrators to mint new tokens (up to max supply).
-   - `burn(uint)`: Allows users to burn their own tokens.
-
-4. **Administrative Functions**
-   - `setAdministrator(address, bool)`: Assigns or revokes administrator roles.
-   - `transferOwnership(address)`: Transfers ownership to another address.
-   - `updateTokenPrice(uint)`: Updates the price of tokens in wei.
-   - `pausePurchases(bool)`: Pauses or resumes token purchases.
-
-5. **Utility Functions**
-   - `availableForSale()`: Returns the number of tokens available for sale (held by owner).
-   - `contractBalance()`: Returns the ETH balance held by the contract.
-
-6. **Withdrawals**
-   - `withdrawEther(uint)`: Allows the owner to withdraw ETH from the contract balance.
+- `onlyOwner`: Restricts a function to the contract owner.  
+- `onlyAdmin`: Restricts access to admin-only functions.  
+- `whenNotPaused`: Ensures that purchases can only proceed when enabled.
 
 ---
 
-## Deployment and Usage Instructions
+## 🧪 Available Functions
+
+### 🔓 Public
+
+#### ERC20 Functions
+- `totalSupply()`
+- `balanceOf(address)`
+- `transfer(address, uint)`
+- `approve(address, uint)`
+- `allowance(address, address)`
+- `transferFrom(address, address, uint)`
+
+#### Token Purchase
+- `buyTokens()`: Purchase tokens with ETH.
+
+#### Minting & Burning
+- `mint(uint)`: Admins can mint new tokens.  
+- `burn(uint)`: Users can burn their own tokens.
+
+#### Administrative
+- `setAdministrator(address, bool)`
+- `transferOwnership(address)`
+- `updateTokenPrice(uint)`
+- `pausePurchases(bool)`
+
+#### Utility
+- `availableForSale()`: Tokens available for sale (held by owner).  
+- `contractBalance()`: ETH balance held by the contract.
+
+#### Withdrawals
+- `withdrawEther(uint)`: Allows the owner to withdraw ETH.
+
+---
+
+## 🚀 Deployment & Usage
 
 ### Deployment
-1. Deploy the contract on an Ethereum-compatible blockchain (e.g., Ethereum mainnet or testnet).
-2. The deployer will automatically become the owner and receive the initial supply of 1 million NOV tokens.
+
+1. Deploy the contract to any Ethereum-compatible network (e.g., mainnet or testnet).  
+2. The deployer becomes the owner and receives the initial 1 million NOV tokens.
 
 ### Interacting with the Contract
-- Use any Ethereum wallet or development tool like Remix or Hardhat to interact with the contract functions.
-- Send ETH directly to the contract address to purchase NOV tokens (if purchases are not paused).
+
+- Use development tools like **Remix**, **Hardhat**, or **Truffle**.  
+- Use wallets like **MetaMask** to send ETH and interact with the contract.  
+- ETH sent directly to the contract address will trigger token purchases if not paused.
 
 ---
 
-## Tools Used
+## 🧰 Required Tooling
 
-To develop and interact with this smart contract locally or on testnets/mainnets, you will need:
+To develop or test the contract, ensure the following tools are available:
 
-1. **Node.js (v14 or later)**  
-   Ensure Node.js is installed for running development tools like Truffle and Ganache.
-
-2. **Truffle Framework**  
-   Truffle provides a suite of tools for compiling contracts, deploying them on blockchains, and testing their functionality.
-
-3. **Ganache**  
-   Ganache is used as a local blockchain environment for testing smart contracts during development.
-
-4. **MetaMask Wallet**  
-   MetaMask allows you to manage wallets and interact with deployed contracts on various Ethereum networks (mainnet/testnet).
+- **Node.js (v14 or higher)**  
+- **Truffle Framework** – for compilation, deployment, and testing  
+- **Ganache** – local blockchain for development  
+- **MetaMask** – for managing wallets and network interactions
 
 ---
 
-## Security Considerations
-1. Ensure only trusted addresses are assigned as administrators.
-2. Regularly monitor and update token prices as needed via `updateTokenPrice`.
-3. Use caution when transferring ownership or withdrawing large amounts of ETH from the contract.
+## 🔒 Security Considerations
+
+- Assign administrator rights only to trusted addresses.  
+- Monitor token price regularly and adjust as needed.  
+- Be cautious with ownership transfers and large ETH withdrawals.
 
 ---
 
-This README provides a comprehensive guide to understanding and interacting with the Novocoin smart contract!
+> **Novocoin** is more than a token—it’s a living contract, designed with intention, governed by clarity, and built to evolve.  
+> Like all worthy agreements, it doesn’t just execute—it honors.
