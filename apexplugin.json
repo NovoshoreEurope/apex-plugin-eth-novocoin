@@ -22,7 +22,7 @@
         "versions": ["24.2"],
         "plugin": {
           "internalName": "NOVOCOIN_GET_BALANCE",
-          "type": "item",
+          "type": "region",
           "demo": "https://apexdev.novoshore.com/ords/r/demos/pluginhub/multi-selector-layer",
           "previewImage": "https://raw.githubusercontent.com/NovoshoreEurope/apex-plugin-eth-novocoin/main/Novocoin.plugin.apex/src/images/preview.png"
         }
