@@ -3,7 +3,7 @@
     "version": "1.0",
     "description": "Displays a user's Novocoin token balance from the blockchain in an Oracle APEX region using MetaMask and Web3. Includes customizable messages, user-friendly balance formatting, and robust error handling. Perfect for Web3 integrations in enterprise applications.",
     "keywords": ["Web3", "MetaMask", "ERC-20", "ERC-20", "Token Balance"],
-    "homepage": "https://github.com/NovoshoreEurope/apex-plugin-multi-selector-layer",
+    "homepage": "https://github.com/NovoshoreEurope/apex-plugin-eth-novocoin",
     "license": "MIT",
     "commercial": "No",
     "author": {
@@ -14,18 +14,18 @@
     },
     "repository": {
       "type": "git",
-      "url": "https://github.com/NovoshoreEurope/apex-plugin-multi-selector-layer.git"
+      "url": "https://github.com/NovoshoreEurope/apex-plugin-eth-novocoin"
     },
     "oracle": {
       "versions": ["24.2"],
       "apex": {
         "versions": ["24.2"],
         "plugin": {
-          "internalName": "MULTI_SELECT_LAYER",
+          "internalName": "NOVOCOIN_GET_BALANCE",
           "type": "item",
           "demo": "https://apexdev.novoshore.com/ords/r/demos/pluginhub/multi-selector-layer",
-          "previewImage": "https://raw.githubusercontent.com/NovoshoreEurope/apex-plugin-multi-selector-layer/main/src/images/preview_image_3.gif"
+          "previewImage": "https://raw.githubusercontent.com/NovoshoreEurope/apex-plugin-eth-novocoin/main/Novocoin.plugin.apex/src/images/preview.png"
         }
       }
     }
-  }
+  }!

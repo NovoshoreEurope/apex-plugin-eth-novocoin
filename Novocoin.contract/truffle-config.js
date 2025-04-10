@@ -21,7 +21,7 @@ module.exports = {
     alchemy_sepolia: {
       provider: () => new HDWalletProvider(
         process.env.PRIVATE_KEY, // Use your mnemonic stored in .env
-        `https://eth-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_PROJECT_ID}` // Infura URL
+        `https://eth-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_PROJECT_ID}` // Alchemy URL
       ),
       network_id: 11155111
     },
