@@ -23,7 +23,7 @@
         "plugin": {
           "internalName": "NOVOCOIN_GET_BALANCE",
           "type": "region",
-          "demo": "https://apexdev.novoshore.com/ords/r/demos/pluginhub/multi-selector-layer",
+          "demo": "https://cmbfvezufmpaqpn-nsworkshop23.adb.eu-frankfurt-1.oraclecloudapps.com/ords/r/smooth_bear_1/pluginhub/novocoin",
           "previewImage": "https://raw.githubusercontent.com/NovoshoreEurope/apex-plugin-eth-novocoin/main/Novocoin.plugin.apex/src/images/preview.png"
         }
       }
