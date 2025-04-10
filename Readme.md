@@ -1,6 +1,6 @@
 
 # Apex-Plug-ins
-This smart contract implements the ERC20 standard with additional functionalities such as token purchases using ETH, administrative controls for minting and burning tokens, and ownership management.
+Novocoin is a modular project that bridges blockchain technology with enterprise applications. It consists of three main components: Novocoin.contract, an extended ERC-20 smart contract with support for ETH-based token purchases, minting/burning controls, and ownership management; Novocoin.plugin.apex, a custom Oracle APEX plugin that displays users’ token balances in real time via Web3 and MetaMask; and Novocoin.send.eth, a lightweight web interface for sending ETH to the contract and purchasing tokens directly from the browser. Together, these components deliver a seamless Web3 experience within modern enterprise environments.
 
 # Novoshore
 <p align="center">
@@ -11,10 +11,13 @@ This smart contract implements the ERC20 standard with additional functionalitie
 ## Folder Structure
 
 ### `Novocoin.contract` Folder
+Implements the ERC-20 token standard with extended functionalities such as ETH-based token purchases, administrative minting/burning, and ownership control. This smart contract serves as the core logic layer for token economics and governance.
 
+### `Novocoin.plugin.apex` Folder
+A custom Oracle APEX plugin that connects to the blockchain via Web3 and MetaMask, allowing real-time display of a user’s Novocoin token balance. It supports enterprise environments by providing seamless, secure blockchain integration directly in APEX pages.
 
 ### `Novocoin.send.eth` Folder
-
+A frontend utility that facilitates sending ETH to the smart contract, enabling token purchases directly from the browser. It acts as a lightweight gateway between the user’s wallet and the Novocoin contract.
 
 ## Ethereum Token Assignment Project
 
