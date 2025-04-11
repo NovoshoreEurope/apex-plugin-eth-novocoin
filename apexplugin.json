@@ -17,7 +17,7 @@
       "url": "https://github.com/NovoshoreEurope/apex-plugin-eth-novocoin"
     },
     "oracle": {
-      "versions": ["24.2"],
+      "versions": ["23.0"],
       "apex": {
         "versions": ["24.2"],
         "plugin": {
