@@ -8,8 +8,6 @@ This plugin is designed for developers working with Oracle APEX who want to inte
 
 We created this plugin to simplify working with smart contracts, ABI files, and RPC nodes from within a traditional enterprise development environment like Oracle APEX.
 
-> In our [previous article](https://github.com/NovoshoreEurope/...) (TODO: Add actual link), we demonstrated how to integrate Oracle Blockchain with APEX using the Novocoin concept. In this version, we take it one step further by adapting the same structure to work with Ethereum (Sepolia) and making it available as a reusable plugin.
-
 ## 🔧 How It Works
 
 The plugin connects to the Ethereum Sepolia testnet and interacts with the Novocoin smart contract to retrieve the token balance for the address provided by the user.
@@ -19,12 +17,6 @@ The plugin connects to the Ethereum Sepolia testnet and interacts with the Novoc
 - ✅ Built for the Sepolia testnet
 - ✅ Uses JSON-RPC to communicate with an Ethereum node
 - ✅ Fully encapsulated for easy APEX integration
-
-## 📷 Screenshot
-
-![Novocoin APEX plugin with MetaMask wallet](https://github.com/NovoshoreEurope/apex-plugin-eth-novocoin/assets/your-image-id.png)
-
-*The Oracle APEX plugin displays the Novocoin balance for the connected wallet, matching the user's MetaMask balance.*
 
 ## 🚀 Quick Start
 
