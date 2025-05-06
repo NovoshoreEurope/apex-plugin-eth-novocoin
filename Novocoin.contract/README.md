@@ -151,3 +151,11 @@ To develop or test the contract, ensure the following tools are available:
 - Assign administrator rights only to trusted addresses.  
 - Monitor token price regularly and adjust as needed.  
 - Be cautious with ownership transfers and large ETH withdrawals.
+
+## 📄 License
+
+MIT License. See [LICENSE](../LICENSE) for details.
+
+---
+
+Built with ❤️ by [Novoshore Europe](https://novoshore.com).

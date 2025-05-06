@@ -61,3 +61,11 @@ You'll get detailed output in the console showing:
 - Add a CLI interface to specify amount and destination
 - Implement retry logic for congested networks
 - Persist logs to a file
+
+## 📄 License
+
+MIT License. See [LICENSE](../LICENSE) for details.
+
+---
+
+Built with ❤️ by [Novoshore Europe](https://novoshore.com).
