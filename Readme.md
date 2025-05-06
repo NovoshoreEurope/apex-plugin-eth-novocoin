@@ -122,3 +122,11 @@ Follow these steps to install and configure Novocoin locally:
    - Import the plugin into Oracle APEX.
    - Set the smart contract address and user wallet address as plugin attributes.
    - Make sure MetaMask is enabled when viewing the APEX page.
+   
+## 📄 License
+
+MIT License. See [LICENSE](../LICENSE) for details.
+
+---
+
+Built with ❤️ by [Novoshore Europe](https://novoshore.com).
